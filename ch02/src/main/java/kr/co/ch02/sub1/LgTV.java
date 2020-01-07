@@ -1,6 +1,4 @@
-package kr.co.ch02;
-
-import kr.co.ch02.sub1.Speaker;
+package kr.co.ch02.sub1;
 
 public class LgTV implements TV{
 

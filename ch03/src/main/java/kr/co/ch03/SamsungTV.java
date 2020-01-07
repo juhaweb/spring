@@ -1,26 +1,23 @@
-package kr.co.ch02;
+package kr.co.ch03;
 
-import kr.co.ch02.sub1.Speaker;
+import org.springframework.stereotype.Component;
 
+import kr.co.ch03.Speaker;
+
+@Component("stv")
 public class SamsungTV implements TV{
 
 	private Speaker spk;
-	
-	public void setSpk(Speaker spk) {
-		this.spk = spk;
-	}
-	
+
 	@Override
 	public void power() {
 		System.out.println("SamsungTV power...");
 	}
-	
 
 	@Override
 	public void chUp() {
 		System.out.println("SamsungTV chUp...");
 	}
-	
 
 	@Override
 	public void soundUp() {

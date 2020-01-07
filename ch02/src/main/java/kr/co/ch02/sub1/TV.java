@@ -1,4 +1,4 @@
-package kr.co.ch02;
+package kr.co.ch02.sub1;
 
 public interface TV {
 

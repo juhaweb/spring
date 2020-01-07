@@ -3,10 +3,6 @@ package kr.co.ch02.sub1;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
-import kr.co.ch02.LgTV;
-import kr.co.ch02.SamsungTV;
-import kr.co.ch02.TV;
-
 /*
  * 날짜 : 2020/01/06
  * 이름 : 하정욱

@@ -10,17 +10,43 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
 
-	<!-- 객체(POJO Bean) 등록 -->
-	<bean id="ltv" class="kr.co.ch02.LgTV">
+	<!-- sub3  -->
+	<!--  어노테이션 @Component("tv5")..  위에 빈 태깅 한거랑 같음. -->
+	<!--  base package에 있는 모든 어노테이션을 스캔해서....  -->
+	<context:component-scan base-package="kr.co.ch02"></context:component-scan>
+	
+	
+	
+	<!-- sub1 객체(POJO Bean) 등록 -->
+	<bean id="tv1" class="kr.co.ch02.sub1.LgTV">
 		<!-- 프로퍼티는 멤버임 ltv의 멤버.. stv의 멤버..  // ref는 참조 -->
 		<property name="spk" ref="speaker"></property>
 	</bean>
 	
-	<bean id="stv" class="kr.co.ch02.SamsungTV">
+	<bean id="tv2" class="kr.co.ch02.sub1.SamsungTV">
 		<property name="spk" ref="speaker"></property>
 	</bean>
 	
 	<bean id="speaker" class="kr.co.ch02.sub1.Speaker"/>
+	
+	
+	
+	
+	<!-- sub2 클래스에 대한 객체를 스프링 컨테이너에 지정 : constructor-arg ref 매개변수로 speaker2를 참조한다. 
+	<bean id="tv3" class="kr.co.ch02.sub2.LgTV">
+		<constructor-arg ref="speaker2"></constructor-arg>
+	</bean>
+	
+	<bean id="tv4" class="kr.co.ch02.sub2.SamsungTV">
+		<constructor-arg ref="speaker2"></constructor-arg>
+	</bean>
+	
+	<bean id="speaker2" class="kr.co.ch02.sub2.Speaker"/>
+	-->
+	
+	
+
+	
 	
 
 </beans>

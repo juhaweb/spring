@@ -1,4 +1,4 @@
-package kr.co.ch02;
+package kr.co.ch02.sub1;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
