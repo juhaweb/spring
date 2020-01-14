@@ -8,10 +8,12 @@
 <body>
 	<h1>Spring MVC 실습하기</h1>
 	<hr>
-	<a href="/ch07/hello">hello</a>
-	<a href="/ch07/greeting">greeting</a>
-	<a href="/ch07/user/form">member form 페이지</a>
-	<a href="/ch07/user/list">member list 페이지</a>
-
+	<ul>
+		<li><a href="/ch07/hello">hello</a></li>
+		<li><a href="/ch07/greeting">greeting</a></li>
+		<li><a href="/ch07/user/form">member form 페이지</a></li>
+		<li><a href="/ch07/user/list">member list 페이지</a></li>
+	</ul>
+	
 </body>
 </html>

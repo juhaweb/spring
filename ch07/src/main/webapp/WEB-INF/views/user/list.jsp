@@ -10,16 +10,12 @@
 <body>
 	<h1>List</h1>
 	<hr>
-	
-	<c:forEach var="bbb" items="${aaa}">
-		<p> 
-			아이디 : ${bbb.uid} <br/>
-			이   름 : ${bbb.name} <br/>
-			휴대폰 : ${bbb.hp} <br/>
-			나   이 : ${bbb.age} <br/>
-		</p>
-	</c:forEach>	
-
+	<ul>
+	<li> 아이디 / 이름 / 휴대폰 / 나이
+		<c:forEach var="bbb" items="${aaa}">
+			<li> ${bbb.uid} | ${bbb.name} | ${bbb.hp} | ${bbb.age} </li>
+		</c:forEach>	
+	</ul>
 
 </body>
 </html>
