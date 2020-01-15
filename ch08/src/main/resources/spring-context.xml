@@ -12,7 +12,7 @@
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
 
 	<!-- 제일먼저 필수 ! 컴포넌트  스캔 -->
-	<context:component-scan base-package="kr.co.ch07"></context:component-scan>
+	<context:component-scan base-package="kr.co.ch08"></context:component-scan>
 	
 	<!-- ViewResolver 설정 -->
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -33,20 +33,18 @@
 		<property name="dataSource" ref="dataSource"/>	
 									<!-- ref="dataSource" 위에 bean id dataSource 참조 -->
 	</bean>
-	
+
 	<!-- Mybatis 설정 -->
 	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="dataSource"/>
-		<property name="configLocation" value="class:path:mybatis-context.xml"/>
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="configLocation" value="classpath:mybatis-context.xml"></property>		
 	</bean>
-
-	<!-- Mybatis-Spring 설정 -->								<!-- 이걸로 다오쪽에 주입받을거임.. -->
-	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate"> 
+	
+	<!-- Mybatis-Spring 설정 -->
+	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sqlSessionFactoryBean"></constructor-arg>
 	</bean>
-	
-	
-	
-	
+
+
 
 </beans>
