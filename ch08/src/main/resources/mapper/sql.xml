@@ -31,6 +31,8 @@
 		DELETE FROM `USER3` WHERE `uid`=#{uid}; 
 	</delete>
 	
+	
+	
 
 
 </mapper>

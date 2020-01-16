@@ -20,19 +20,17 @@
 			</tr>
 			<tr>
 				<th>연락처</th>
-				<td><input type="text" name="hp"/></td>
+				<td><input type="text" name="hp" value="${user.hp}"/></td>
 			</tr>
 			<tr>
 				<th>나이</th>
-				<td><input type="text" name="age"/></td>
+				<td><input type="text" name="age" value="${user.age}"/></td>
 			</tr>
 			<tr>
-				<th colspan="2">
+			<th colspan="2">
 					<input type="submit" value="등록하기"/>
 				</th>
 			</tr>
-			
-		
 		</table>
 	</form>
 
