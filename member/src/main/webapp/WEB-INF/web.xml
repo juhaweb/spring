@@ -3,7 +3,6 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
-
 	<!-- Spring Front Controller 설정 -->
 	<servlet>
 		<servlet-name>DispatcherServlet</servlet-name>
@@ -35,5 +34,4 @@
 	</filter-mapping>	
 	
 	
-
 </web-app>
