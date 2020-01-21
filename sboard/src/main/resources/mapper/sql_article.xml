@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<!-- namespace(경로) 폴더명.파일이름 -->
+<mapper namespace="mapper.sql_article">
+		
+		<insert id="INSERT_ARTICLE">
+			INSERT INTO `BOARD_ARTICLE` SET 
+			`cate`=#{cate}, 
+			`title`=#{title},
+			`content`=#{content},
+			`uid`=#{uid},
+			`regip`=#{regip},
+			`rdate`=NOW();
+		</insert>
+
+		<select id="SELECT_ARTICLES" resultType="kr.co.sboard.vo.BoardArticleVO">
+			SELECT a.*, b.nick FROM `BOARD_ARTICLE` AS a 
+			JOIN `BOARD_MEMBER` AS b ON a.uid = b.uid
+			WHERE `parent`=0 
+			ORDER BY `seq` DESC;
+		</select>
+		
+		
+
+</mapper>
