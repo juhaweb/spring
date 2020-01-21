@@ -15,6 +15,11 @@ public class BoardDAO {
 	// 마이바티스 
 	@Inject
 	private SqlSessionTemplate mybatis;
+
+	// 전체 게시물 갯수
+	public int getTotalArticle() {
+		return mybatis.selectOne("mapper.sql_article.SELECT_TOTAL_ARTICLES");
+	}
 	
 	// 게시글등록
 	public void insertArticle(BoardArticleVO bvo) {
@@ -27,8 +32,8 @@ public class BoardDAO {
 	}
 	
 	// 게시글 전체선택(리스트 출력)
-	public List<BoardArticleVO>selectArticles() {
-		return mybatis.selectList("mapper.sql_article.SELECT_ARTICLES");
+	public List<BoardArticleVO>selectArticles(int start) {
+		return mybatis.selectList("mapper.sql_article.SELECT_ARTICLES",start);
 	}
 	
 	// 게시글 수정

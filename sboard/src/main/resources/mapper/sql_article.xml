@@ -17,9 +17,13 @@
 			SELECT a.*, b.nick FROM `BOARD_ARTICLE` AS a 
 			JOIN `BOARD_MEMBER` AS b ON a.uid = b.uid
 			WHERE `parent`=0 
-			ORDER BY `seq` DESC;
+			ORDER BY `seq` DESC
+			LIMIT #{start}, 10;
 		</select>
 		
+		<select id="SELECT_TOTAL_ARTICLES" resultType="int">
+			SELECT COUNT(*) FROM `BOARD_ARTICLE` WHERE `parent`=0;
+		</select>
 		
 
 </mapper>

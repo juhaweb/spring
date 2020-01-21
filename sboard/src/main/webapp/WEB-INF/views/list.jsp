@@ -23,7 +23,7 @@
 					</tr>
 				<c:forEach var="bvo" items="${articles}">
 					<tr>
-						<td>${bvo.seq}</td>
+						<td>${count=count-1}</td>
 						<td><a href="#">${bvo.title}</a>&nbsp;[${bvo.comment}]</td>
 						<td>${bvo.nick}</td>
 						<td>${bvo.rdate.substring(2,10)}</td>
@@ -36,7 +36,9 @@
 			<nav class="paging">
 				<span> 
 				<a href="#" class="prev">이전</a>
-				<a href="#" class="num">1</a>
+				<c:forEach var="n" begin="1" end="${pageEnd}">
+					<a href="/sboard/list?pg=${n}" class="num">${n}</a>
+				</c:forEach>
 				<a href="#" class="next">다음</a>
 				</span>
 			</nav>

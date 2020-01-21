@@ -22,33 +22,29 @@ public class BoardController {
 	@Inject
 	private BoardService service;
 	
-//	// 리스트
-//	@RequestMapping("/list")
-//	public String list(HttpServletRequest req) {
-//		
-//		List<BoardArticleVO> articles =  service.selectArticles();
-//		req.setAttribute("articles", articles);
-//		
-//		return "/list";	
-//		
-//	}
-	
-	
-	// 리스트 
-	@RequestMapping ("/list")
-	public String list(HttpSession session,HttpServletRequest req) {
+	// 리스트 출력
+	@RequestMapping("/list")
+	public String list(HttpServletRequest req, String pg) {
 		
-		MemberVO member = (MemberVO) session.getAttribute("member");
+		// 전체 게시물 갯수
+		int total = service.getTotalArticle();
 		
-		if(member == null) {
-			// 세션정보가 없다면 -> 로그인으로
-			return"/member/login";
-		}else{
-			// 세션정보가 있다면 
-			List<BoardArticleVO> articles =  service.selectArticles();
-			req.setAttribute("articles", articles);
-			return "/list";
-		}
+		// LIMIT 번호 계산
+		int start = service.getLimitStart(pg);
+		
+		// 마지막 페이지 번호 계산
+		int pageEnd = service.getPageEnd(total);
+		
+		// 글 순서 카운터 번호
+		int count = service.getLIstCount(total, start);
+		
+		List<BoardArticleVO> articles = service.selectArticles(start);
+		
+		req.setAttribute("articles", articles);
+		req.setAttribute("pageEnd", pageEnd);
+		req.setAttribute("count", count);
+		
+		return "/list";
 	}
 	
 	
