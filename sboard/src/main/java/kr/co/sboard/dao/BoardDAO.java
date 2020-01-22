@@ -28,7 +28,7 @@ public class BoardDAO {
 	
 	// 게시글 선택 - seq 키값으로 조회를 해야함 
 	public BoardArticleVO selectArticle(int seq) {
-		return null;
+		return mybatis.selectOne("mapper.sql_article.SELECT_ARTICLE",seq);
 	}
 	
 	// 게시글 전체선택(리스트 출력)
@@ -37,13 +37,32 @@ public class BoardDAO {
 	}
 	
 	// 게시글 수정
-	public void updateArticle(int seq) {}
+	public void updateArticle(BoardArticleVO bvo) {
+		mybatis.update("mapper.sql_article.UPDATE_ARTICLE", bvo);
+	}
 	
 	// 게시글 삭제
-	public void deleteArticle(int seq) {}
+	public void deleteArticle(int seq) {
+		mybatis.delete("mapper.sql_article.DELETE_ARTICLE",seq);
+	}
 
+	// 댓글 등록
+	public void insertComment(BoardArticleVO bvo) {
+		mybatis.insert("mapper.sql_article.INSERT_COMMENT", bvo);
+	}
 	
+	// 댓글 선택(표시)
+	public List<BoardArticleVO>selectComment(int parent) {
+		return mybatis.selectList("mapper.sql_article.SELECT_COMMENT",parent);
+	}
 	
+	public void updateComment(BoardArticleVO bvo) {}
+	
+	public void deleteComment(int seq) {
+		mybatis.delete("mapper.sql_article.DELETE_COMMENT",seq);
+	}
+	
+
 	
 	
 }

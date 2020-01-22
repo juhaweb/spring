@@ -16,18 +16,29 @@ public class BoardArticleVO {
 	
 	// 추가필드
 	private String nick;
+	private String subject;
 	
 	public String getNick() {
 		return nick;
 	}
 	public void setNick(String nick) {
 		this.nick = nick;
-		
-		
-		
-		
-		
 	}
+	public String getSubject() {
+		return subject;
+	}
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public int getSeq() {
 		return seq;
 	}

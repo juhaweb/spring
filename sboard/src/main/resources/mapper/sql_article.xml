@@ -2,7 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 	<!-- namespace(경로) 폴더명.파일이름 -->
 <mapper namespace="mapper.sql_article">
-		
+
+
+		<!-- 아래 글관리 -->		
 		<insert id="INSERT_ARTICLE">
 			INSERT INTO `BOARD_ARTICLE` SET 
 			`cate`=#{cate}, 
@@ -12,6 +14,10 @@
 			`regip`=#{regip},
 			`rdate`=NOW();
 		</insert>
+
+		<select id="SELECT_ARTICLE" resultType="kr.co.sboard.vo.BoardArticleVO">
+			SELECT * FROM `BOARD_ARTICLE` WHERE `seq`=#{seq};
+		</select>
 
 		<select id="SELECT_ARTICLES" resultType="kr.co.sboard.vo.BoardArticleVO">
 			SELECT a.*, b.nick FROM `BOARD_ARTICLE` AS a 
@@ -24,6 +30,33 @@
 		<select id="SELECT_TOTAL_ARTICLES" resultType="int">
 			SELECT COUNT(*) FROM `BOARD_ARTICLE` WHERE `parent`=0;
 		</select>
+		
+		<update id="UPDATE_ARTICLE">
+			UPDATE `BOARD_ARTICLE` SET `title`=#{subject}, `content`=#{content} WHERE `seq`=#{seq};
+		</update>
+		
+		<delete id="DELETE_ARTICLE">
+			DELETE FROM `BOARD_ARTICLE` WHERE `seq`=#{seq};
+		</delete>
+		
+		
+		<!-- 아래 댓글관리 -->
+		<insert id="INSERT_COMMENT">
+			INSERT INTO `BOARD_ARTICLE` SET 
+			`parent`=#{parent},
+			`content`=#{content},
+			`uid`=#{uid},
+			`regip`=#{regip},
+			`rdate`=NOW();
+		</insert>
+		
+		<select id="SELECT_COMMENT" resultType="kr.co.sboard.vo.BoardArticleVO">
+			SELECT * FROM `BOARD_ARTICLE` WHERE `parent`=#{parent} ORDER BY `seq` ASC;		
+		</select>
+		
+		<delete id="DELETE_COMMENT">
+			DELETE FROM `BOARD_ARTICLE` WHERE `seq`=#{seq};
+		</delete>
 		
 
 </mapper>

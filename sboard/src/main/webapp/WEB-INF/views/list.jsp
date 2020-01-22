@@ -24,7 +24,7 @@
 				<c:forEach var="bvo" items="${articles}">
 					<tr>
 						<td>${count=count-1}</td>
-						<td><a href="#">${bvo.title}</a>&nbsp;[${bvo.comment}]</td>
+						<td><a href="/sboard/view?seq=${bvo.seq}">${bvo.title}</a>&nbsp;[${bvo.comment}]</td>
 						<td>${bvo.nick}</td>
 						<td>${bvo.rdate.substring(2,10)}</td>
 						<td>${bvo.hit}</td>

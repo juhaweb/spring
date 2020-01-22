@@ -65,8 +65,8 @@ public class BoardService {
 		}
 		
 		// 게시글 수정
-		public void updateArticle(int seq) {
-			dao.updateArticle(seq);
+		public void updateArticle(BoardArticleVO bvo) {
+			dao.updateArticle(bvo);
 		}
 		
 		// 게시글 삭제
@@ -74,7 +74,25 @@ public class BoardService {
 			dao.deleteArticle(seq);
 		}
 
+		// 댓글 등록
+		public void insertComment(BoardArticleVO bvo) {
+			dao.insertComment(bvo);
+		}
 		
-	
+		// 댓글 선택(표시)
+		public List<BoardArticleVO>selectComment(int parent) {
+			return dao.selectComment(parent);
+		}
+
+		// 댓글 수정
+		public void updateComment(BoardArticleVO bvo) {
+			dao.updateComment(bvo);
+		}
+		
+		// 댓글 삭제
+		public void deleteComment(int seq) {
+			dao.deleteComment(seq);
+		}
+		
 	
 }
