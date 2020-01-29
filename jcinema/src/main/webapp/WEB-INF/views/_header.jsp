@@ -9,12 +9,13 @@
     <title>제이시네마</title>
     <link rel="shortcut icon" href="/jcinema/img/favicon.ico"/>    
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="/jcinema/css/sub.css">
-    <link rel="stylesheet" href="/jcinema/css/style_member.css">
+    <link rel="stylesheet" href="/jcinema/css/sub_member.css">
+    <link rel="stylesheet" href="/jcinema/css/sub.css">    
     <link rel="stylesheet" href="/jcinema/css/style.css"/>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="/jcinema/js/user.js"></script>
     <script src="/jcinema/js/topBannerBg.js"></script>
     <script src="/jcinema/js/ticketCalendar.js"></script>
     
@@ -54,7 +55,7 @@
             <div class="gnb">
                 <article>
                     <ul>
-                        <li><a href="/jcinema/ticketing/choice-movie">예매</a></li>
+                        <li class="on"><a href="/jcinema/ticketing/choice-movie">예매</a></li>
                         <li><a href="/jcinema/ticketing/choice-seat">영화</a></li>
                         <li><a href="/jcinema/ticketing/order-confirm">영화관</a></li>
                         <li><a href="/jcinema/ticketing/order-result">이벤트</a></li>

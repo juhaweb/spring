@@ -29,4 +29,12 @@ public class TicketingController {
 	}
 	
 	
+	public void getTheater() {
+		
+		
+		
+		
+	}
+	
+	
 }

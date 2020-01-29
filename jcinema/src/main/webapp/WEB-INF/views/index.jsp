@@ -106,25 +106,26 @@
     <div class="event">
         <article>
             <h1>Event</h1>
-
             <div>
-                <a href="#"><img src="/jcinema/img/event_img3.jpg" alt=""></a>
-                <a href="#"><img src="/jcinema/img/event_img2.jpg" alt=""></a>
                 <a href="#"><img src="/jcinema/img/event_img1.jpg" alt=""></a>
-                <a href="#"><img src="/jcinema/img/event_img6.jpg" alt=""></a>
-                <a href="#"><img src="/jcinema/img/event_img5.jpg" alt=""></a>
+                <a href="#"><img src="/jcinema/img/event_img2.jpg" alt=""></a>
+                <a href="#"><img src="/jcinema/img/event_img3.jpg" alt=""></a>
                 <a href="#"><img src="/jcinema/img/event_img4.jpg" alt=""></a>
+                <a href="#"><img src="/jcinema/img/event_img5.jpg" alt=""></a>
+                <a href="#"><img src="/jcinema/img/event_img6.jpg" alt=""></a>
                 <a href="#"><img src="/jcinema/img/event_img7.jpg" alt=""></a>
             </div>
         </article>            
     </div>
     <div class="quick">
         <article>
-            <a href="#"><img src="/jcinema/img/quick_menu1.gif" alt=""></a>
-            <a href="#"><img src="/jcinema/img/quick_menu2.gif" alt=""></a>
-            <a href="#"><img src="/jcinema/img/quick_menu3.gif" alt=""></a>
-            <a href="#"><img src="/jcinema/img/quick_menu4.gif" alt=""></a>
-            <a href="#"><img src="/jcinema/img/quick_menu5.gif" alt=""></a>
+            <ul>
+            	<li><a href="#"><img src="/jcinema/img/quick_menu1.gif" alt=""></a></li>
+            	<li><a href="#"><img src="/jcinema/img/quick_menu2.gif" alt=""></a></li>
+            	<li><a href="#"><img src="/jcinema/img/quick_menu3.gif" alt=""></a></li>
+            	<li><a href="#"><img src="/jcinema/img/quick_menu4.gif" alt=""></a></li>
+            	<li><a href="#"><img src="/jcinema/img/quick_menu5.gif" alt=""></a></li>            
+            </ul>
         </article>
     </div>
     <div class="notice">

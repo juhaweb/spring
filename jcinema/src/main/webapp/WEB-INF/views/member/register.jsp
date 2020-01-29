@@ -154,9 +154,9 @@
 
             <div>
                 <a href="#" class="btn cancel">취소</a>
-                <a href="#" class="btn register">회원가입</a>
+                <a href="#" id="btnRegister" class="btn register">회원가입</a>
             </div>
-
+			</form>
         </div>
         
     </section>            
