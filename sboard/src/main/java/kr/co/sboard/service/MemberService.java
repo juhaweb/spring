@@ -37,6 +37,8 @@ public class MemberService {
 		return dao.selectTerms();
 	}
 	
+
+	
 	
 	
 	

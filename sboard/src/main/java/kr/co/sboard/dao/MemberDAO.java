@@ -25,6 +25,7 @@ public class MemberDAO {
 		return mybatis.selectOne("mapper.sql_member.SELECT_UID_COUNT", uid);
 	}
 	
+	// ¸â¹ö1¼±ÅÃ
 	public MemberVO selectMember(MemberVO mvo) {
 		return mybatis.selectOne("mapper.sql_member.SELECT_MEMBER",mvo);
 	}
