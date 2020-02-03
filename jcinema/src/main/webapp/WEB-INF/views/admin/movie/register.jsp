@@ -1,9 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../_header.jsp" %>
-
 <div>
     <div class="container">
-    <%@ include file="../_aside.jsp" %>
+        <%@ include file="../_aside.jsp" %>
         <section id="sub" class="movie-register">
 
             <nav>
@@ -12,7 +11,7 @@
             </nav>
                                 
             <article>
-                <form action="#">
+                <form action="/jcinema/admin/movie/register" method="post">
                     <div class="field">
                         <label for="movie_title">영화제목</label>
                         <input id="movie_title" type="text" name="movie_title" />
@@ -72,11 +71,7 @@
                     <button type="submit" class="btnRegister">등록하기</button>
                 </form>
             </article>
-
-            
-
         </section>
     </div>
 </div>
-       
 <%@ include file="../_footer.jsp" %>

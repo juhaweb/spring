@@ -1,10 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../_header.jsp" %>
-
+<script src="/jcinema/admin/js/movieSearch.js"></script>
 <div>
     <div class="container">
-    <%@ include file="../_aside.jsp" %>
-
+        <%@ include file="../_aside.jsp" %>
         <section id="sub" class="movie-schedule">
 
             <div id="searchBg">
@@ -104,8 +103,6 @@
             
 
         </section>
-        
     </div>
 </div>
-
 <%@ include file="../_footer.jsp" %>

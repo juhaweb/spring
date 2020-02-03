@@ -3,7 +3,7 @@
 <c:set var="path" value="${pageContext.request.contextPath}"></c:set>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>제이시네마</title>

@@ -1,5 +1,5 @@
-/* ÊÑøÔøΩÁî±—äÏòÑÔøΩÎüπÔøΩÏî†ÔßûÔøΩ ÔøΩÎí™ÔøΩÔøΩÔøΩÏî™ */
-/* Áè•ÎçáÎ¶∞ÔøΩÏÜï */
+/* ∞¸∏Æ¿⁄∆‰¿Ã¡ˆ Ω∫≈∏¿œ */
+/* √ ±‚»≠ */
 * {
     margin: 0;
     padding: 0;
@@ -210,7 +210,7 @@ footer p {
 }
 
 
-/* ÔøΩÍΩåÈáâÎö≠ÎÇ¨ÔøΩÎÑª */
+/* º≠∫Í∞¯≈Î */
 p.ico {
     width: 834px;
     height: 58px;
@@ -317,8 +317,7 @@ p.error   {border-color: #FBC7C9; background: #FBE3E4 url('../img/admin_ico_erro
     vertical-align: middle;
 }
 
-
-/* Í¥ÄÎ¶¨Ïûê > Î©§Î≤Ñ Î°úÍ∑∏Ïù∏ */        
+/* ∞¸∏Æ¿⁄ > ∏‚πˆ ∑Œ±◊¿Œ */        
 #wrapper-admin-login {
     position: fixed;
     left: 0;
@@ -402,14 +401,13 @@ p.error   {border-color: #FBC7C9; background: #FBE3E4 url('../img/admin_ico_erro
     
 }
 
-/* ÏòÅÌôîÍ¥ÄÎ¶¨ > ÏòÅÌôîÎì±Î°ù */
+/* øµ»≠∞¸∏Æ > øµ»≠µÓ∑œ */
 #sub.movie-register input[name=movie_title] {width: 300px;}
 #sub.movie-register input[name=movie_homepage] {width: 300px;}
 #sub.movie-register input[name=movie_poster] {width: 300px;}
 #sub.movie-register input[name=movie_actor] {width: 300px;}
 
-
-/* ÏòÅÌôîÍ¥ÄÎ¶¨ > ÏòÅÌôîÏÉÅÏòÅ ÏùºÏ†ï Îì±Î°ù */        
+/* øµ»≠∞¸∏Æ > øµ»≠ªÛøµ ¿œ¡§ µÓ∑œ */        
 #searchBg {
     display: none;
     position: fixed;
@@ -508,8 +506,3 @@ p.error   {border-color: #FBC7C9; background: #FBE3E4 url('../img/admin_ico_erro
     color: #fff;
     vertical-align: top;
 }
-
-
-
-
-
