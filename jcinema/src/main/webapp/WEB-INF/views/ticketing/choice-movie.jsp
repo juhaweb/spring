@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../_header.jsp" %>
-<srcipt src="/jcinema/js/choiceMovie.js"></srcipt>        
+<srcipt src="/jcinema/js/choiceMovie.js"></srcipt>
+
 <div id="sub" class="choice-movie">
 
     <nav class="sub-menu"></nav>
@@ -105,36 +106,6 @@
                     </div>
                     <article>
                         <ul>                                    
-                            <li>
-                                <a href="#">                                            
-                                    <span class="grade gradeAll">all</span>
-                                    <span class="tit">겨울왕국2</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">                                            
-                                    <span class="grade grade12">12</span>
-                                    <span class="tit">겨울왕국2</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">                                            
-                                    <span class="grade grade15">15</span>
-                                    <span class="tit">겨울왕국2</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">                                            
-                                    <span class="grade grade18">18</span>
-                                    <span class="tit">겨울왕국2</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">                                            
-                                    <span class="grade grade19">19</span>
-                                    <span class="tit">겨울왕국2</span>
-                                </a>
-                            </li>
                         </ul>
                     </article>
                 </div>

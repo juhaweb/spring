@@ -1,6 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../_header.jsp" %>
-<%@ include file="../_aside.jsp" %>
+
+<div>
+    <div class="container">
+    <%@ include file="../_aside.jsp" %>
 
         <section id="sub" class="movie-schedule">
 
@@ -13,36 +16,7 @@
                     <div>
                         <input type="text" name="title">
                         <button class="btnSearch">검색</button>
-                        <div class="search-table">
-                            <table>                                    
-                                <tr>
-                                    <th>1</th>
-                                    <td>겨울왕국2</td>
-                                    <td>애니메이션</td>
-                                    <td>전체</td>
-                                    <td>2019-12-01</td>
-                                    <td><button class="btnChoice">선택</button></td>
-                                </tr>
-                                <tr>
-                                    <th>2</th>
-                                    <td>겨울왕국2</td>
-                                    <td>애니메이션</td>
-                                    <td>전체</td>
-                                    <td>2019-12-01</td>
-                                    <td><button class="btnChoice">선택</button></td>
-                                </tr>
-                                <tr>
-                                    <th>2</th>
-                                    <td>겨울왕국2</td>
-                                    <td>애니메이션</td>
-                                    <td>전체</td>
-                                    <td>2019-12-01</td>
-                                    <td><button class="btnChoice">선택</button></td>
-                                </tr>
-                                
-                                                        
-                            </table>
-                        </div>
+                        <table class="searchTable"></table>
                     </div>
 
                 </div>
@@ -54,7 +28,9 @@
             </nav>
                                 
             <article>
-                <form action="#">
+                <form action="/jcinema/admin/movie/schedule" method="post">                	
+        			<input type="hidden" name="schedule_movie_no" value="0" />
+        	
                     <div class="field">
                         <label for="theater_city">영화관</label>
                         <select name="theater_city" id="theater_city">
@@ -68,30 +44,19 @@
                             <option>강원</option>
                             <option>제주</option>
                         </select>
-                        <select name="theater_name" id="theater_name">
+                        <select name="schedule_theater_no" id="theater_name">
                             <option>영화관 선택</option>
-                            <option>광복</option>
-                            <option>김해부원</option>
-                            <option>대영</option>
-                            <option>동래</option>
-                            <option>동부산 아울렛</option>
-                            <option>서면(전포동)</option>
-                            <option>센텀시티</option>
-                            <option>오투(부산대)</option>
+                            <option value="115">오투(부산대)</option>
                         </select>
                     </div>
 
                     <div class="field">
                         <label for="screen_no">상영관</label>
-                        <select name="screen_no" id="screen_no">
+                        <select name="schedule_screen_no" id="screen_no">
                             <option>상영관 선택</option>
-                            <option>1관</option>
-                            <option>2관</option>
-                            <option>IMAX관</option>
-                            <option>4관</option>
-                            <option>5관</option>
-                            <option>6관</option>
-                            <option>7관</option>
+                            <option value="1">1관</option>
+                            <option value="2">2관</option>                            
+                            <option value="3">3관</option>
                         </select>
                     </div>
                     <div class="field">
@@ -139,6 +104,7 @@
             
 
         </section>
+        
     </div>
 </div>
 

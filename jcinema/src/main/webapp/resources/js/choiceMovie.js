@@ -35,13 +35,18 @@ $(document).ready(function(){
 		
 		var schedule_date = $('input[name=movie_date]').val();
 		
-		var url ="/jcinema/api/movies?theater_no="+theater_no+"&schedule_date="+schedule_date;
+		var url ="/jcinema/api/schedule/movies?theater_no="+theater_no+"&schedule_date="+schedule_date;
 		var movie_list = $(".rank > article > ul");	
+		
+		
 		
 		movie_list.empty();
 		
 		$.get(url,function(data){
 			
+			var data = JSON.parse(data);
+			
+			// object를 기준으로 each가 동작하기때문에 json data parse해줘야함. 			
 			$.each(data,function(i, value){
 				
 				var grade = null;
@@ -81,13 +86,14 @@ $(document).ready(function(){
 		var schedule_date = $('input[name=movie_date]').val();
 		var schedule_theater_no = $('input[name=theater_no]').val();
 		
+		var showtime_section_div	= $('.showtime > article > section > div');
+		var showtime_nodata			= $('.showtime .nodata');
+				
 		var url = "/jcinema/api/movies-schedule";			
 		var param = {"schedule_date": schedule_date, 
 					 "theater_no": schedule_theater_no, 
 					 "movie_no": movie_no}; 
 		
-		var showtime_section_div	= $('.showtime > article > section > div');
-		var showtime_nodata			= $('.showtime .nodata');
 		
 		
 		$.get(url, param, function(data){
@@ -116,8 +122,7 @@ $(document).ready(function(){
 																  	  "<span>"+dataObj[b].schedule_start_time.substring(0,5)+" ~ "+dataObj[b].schedule_end_time.substring(0,5)+"</span>"+
 																  	  "<span><em>24</em>석/<em>80</em>석</span>"+
 																	  "</a>" + 
-																	  "</li>"
-						);
+																	  "</li>");
 						
 					}
 					

@@ -3,11 +3,8 @@
 <mapper namespace="mapper.sql_theater">
 
 	<select id="SELECT_THEATERS" resultType="kr.co.jcinema.api.vo.ApiTheaterVo">
-		SELECT * FROM `JC_THEATER` WHERE `theater_city` =#{city};
+		SELECT * FROM `JC_THEATER` WHERE `theater_city`=#{city};
 	</select>
 	
-	
-	
-
 	
 </mapper>
