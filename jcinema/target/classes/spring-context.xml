@@ -26,7 +26,7 @@
 	<mvc:resources location="/resources/css/" mapping="/css/**"></mvc:resources>
 	<mvc:resources location="/resources/img/" mapping="/img/**"></mvc:resources>
 	<mvc:resources location="/resources/js/" mapping="/js/**"></mvc:resources>
-	<mvc:resources location="/resources/admin/" mapping="/resources/admin/**"></mvc:resources>
+	<mvc:resources location="/resources/poster/" mapping="/poster/**"></mvc:resources>
 	<mvc:resources location="/resources/admin/css/" mapping="/admin/css/**"></mvc:resources>
 	<mvc:resources location="/resources/admin/img/" mapping="/admin/img/**"></mvc:resources>
 	<mvc:resources location="/resources/admin/js/" mapping="/admin/js/**"></mvc:resources>

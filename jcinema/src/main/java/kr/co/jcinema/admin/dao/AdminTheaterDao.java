@@ -5,6 +5,7 @@ import java.util.List;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import kr.co.jcinema.admin.vo.AdminTheaterVo;
 
@@ -21,14 +22,14 @@ public class AdminTheaterDao {
 	}
 	
 	public List<AdminTheaterVo> selectTheaters() {
+		
 		mybatis.selectList("");
+		
 		return null;
 	}
 	
+	
 	public void updateTheater() {}
-	
 	public void deleteTheater() {}
-	
-		
 	
 }

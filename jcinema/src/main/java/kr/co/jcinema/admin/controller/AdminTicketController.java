@@ -35,5 +35,4 @@ public class AdminTicketController {
 		
 		return "/admin/ticket/generate";
 	}
-	
 }

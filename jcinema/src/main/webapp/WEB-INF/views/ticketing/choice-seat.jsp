@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="../_header.jsp" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<%@ include file="../_header.jsp" %>
 <div id="sub" class="choice-seat">
     <nav class="sub-menu"></nav>
     <section>
@@ -47,7 +48,7 @@
                 </div>
                 <div>
                     <span>좌석 붙임 설정</span>
-                    <img src="/jcinema/img/ico_exclamation.gif" alt="!" title="좌석 붙임 설정 기능 이건 도저히 못하겠다.">
+                    <img src="../img/ico_exclamation.gif" alt="!" title="좌석 붙임 설정 기능 이건 도저히 못하겠다.">
                     <em>·&nbsp;인원은 최대 5명까지 선택 가능합니다.</em>
                 </div>
             </div>
@@ -59,134 +60,14 @@
 
             <article>
                 <ul>
-                    <li>
-                        <span class="tit">A</span>
-                        <a href="#" class="seat" data-seat="A1" title="좌석 A1">1</a>
-                        <a href="#" class="seat" data-seat="A1" title="좌석 A1">2</a>
-                        <a href="#" class="seat" data-seat="A1" title="좌석 A1">3</a>
-                        <a href="#" class="seat" data-seat="A1" title="좌석 A1">4</a>
-                        <a href="#" class="seat" data-seat="A1" title="좌석 A1">5</a>
-                        <a href="#" class="seat" data-seat="A1" title="좌석 A1">6</a>
-                        <a href="#" class="seat" data-seat="A1" title="좌석 A1">7</a>
-                        <a href="#" class="seat" data-seat="A1" title="좌석 A1">8</a>
-                        <a href="#" class="seat" data-seat="A1" title="좌석 A1">9</a>
-                        <a href="#" class="seat" data-seat="A1" title="좌석 A1">10</a>
-                        <a href="#" class="seat" data-seat="A1" title="좌석 A1">11</a>
-                        <a href="#" class="seat" data-seat="A1" title="좌석 A1">12</a>
-                        <a href="#" class="seat" data-seat="A1" title="좌석 A1">13</a>                                
+                <c:forEach varStatus="status" var="seatList" items="${totalSeatList}">
+                	<li>
+                		<span class="tit">${status.index[status.index].seat_row}</span>
+                        <c:forEach varStatus="status" var="svo" items="${seatList}">
+                        <a href="#" class="seat" data-seat="${svo.seat_row}${svo.seat_column}" title="좌석">${status.count}</a>
+                        </c:forEach>
                     </li>
-                    <li>
-                        <span class="tit">B</span>
-                        <a href="#" class="seat" data-seat="B1" title="좌석 B1">1</a>
-                        <a href="#" class="seat" data-seat="B2" title="좌석 B2">2</a>
-                        <a href="#" class="seat" data-seat="B3" title="좌석 B3">3</a>
-                        <a href="#" class="seat" data-seat="B4" title="좌석 B4">4</a>
-                        <a href="#" class="seat" data-seat="B5" title="좌석 B5">5</a>
-                        <a href="#" class="seat" data-seat="B6" title="좌석 B6">6</a>
-                        <a href="#" class="seat" data-seat="B7" title="좌석 B7">7</a>
-                        <a href="#" class="seat" data-seat="B8" title="좌석 B8">8</a>
-                        <a href="#" class="seat" data-seat="B9" title="좌석 B9">9</a>
-                        <a href="#" class="seat" data-seat="B10" title="좌석 B10">10</a>
-                        <a href="#" class="seat" data-seat="B11" title="좌석 B11">11</a>
-                        <a href="#" class="seat" data-seat="B12" title="좌석 B12">12</a>
-                        <a href="#" class="seat" data-seat="B13" title="좌석 B13">13</a>                                
-                    </li>
-                    <li>
-                        <span class="tit">C</span>
-                        <a href="#" class="seat" data-seat="B1" title="좌석 B1">1</a>
-                        <a href="#" class="seat" data-seat="B2" title="좌석 B2">2</a>
-                        <a href="#" class="seat" data-seat="B3" title="좌석 B3">3</a>
-                        <a href="#" class="seat" data-seat="B4" title="좌석 B4">4</a>
-                        <a href="#" class="seat" data-seat="B5" title="좌석 B5">5</a>
-                        <a href="#" class="seat" data-seat="B6" title="좌석 B6">6</a>
-                        <a href="#" class="seat" data-seat="B7" title="좌석 B7">7</a>
-                        <a href="#" class="seat" data-seat="B8" title="좌석 B8">8</a>
-                        <a href="#" class="seat" data-seat="B9" title="좌석 B9">9</a>
-                        <a href="#" class="seat" data-seat="B10" title="좌석 B10">10</a>
-                        <a href="#" class="seat" data-seat="B11" title="좌석 B11">11</a>
-                        <a href="#" class="seat" data-seat="B12" title="좌석 B12">12</a>
-                        <a href="#" class="seat" data-seat="B13" title="좌석 B13">13</a>                                
-                    </li>
-                    <li>
-                        <span class="tit">D</span>
-                        <a href="#" class="seat" data-seat="B1" title="좌석 B1">1</a>
-                        <a href="#" class="seat" data-seat="B2" title="좌석 B2">2</a>
-                        <a href="#" class="seat" data-seat="B3" title="좌석 B3">3</a>
-                        <a href="#" class="seat" data-seat="B4" title="좌석 B4">4</a>
-                        <a href="#" class="seat" data-seat="B5" title="좌석 B5">5</a>
-                        <a href="#" class="seat" data-seat="B6" title="좌석 B6">6</a>
-                        <a href="#" class="seat" data-seat="B7" title="좌석 B7">7</a>
-                        <a href="#" class="seat" data-seat="B8" title="좌석 B8">8</a>
-                        <a href="#" class="seat" data-seat="B9" title="좌석 B9">9</a>
-                        <a href="#" class="seat" data-seat="B10" title="좌석 B10">10</a>
-                        <a href="#" class="seat" data-seat="B11" title="좌석 B11">11</a>
-                        <a href="#" class="seat" data-seat="B12" title="좌석 B12">12</a>
-                        <a href="#" class="seat" data-seat="B13" title="좌석 B13">13</a>                                
-                    </li>
-                    <li>
-                        <span class="tit">E</span>
-                        <a href="#" class="seat" data-seat="B1" title="좌석 B1">1</a>
-                        <a href="#" class="seat" data-seat="B2" title="좌석 B2">2</a>
-                        <a href="#" class="seat" data-seat="B3" title="좌석 B3">3</a>
-                        <a href="#" class="seat" data-seat="B4" title="좌석 B4">4</a>
-                        <a href="#" class="seat" data-seat="B5" title="좌석 B5">5</a>
-                        <a href="#" class="seat" data-seat="B6" title="좌석 B6">6</a>
-                        <a href="#" class="seat" data-seat="B7" title="좌석 B7">7</a>
-                        <a href="#" class="seat" data-seat="B8" title="좌석 B8">8</a>
-                        <a href="#" class="seat" data-seat="B9" title="좌석 B9">9</a>
-                        <a href="#" class="seat" data-seat="B10" title="좌석 B10">10</a>
-                        <a href="#" class="seat" data-seat="B11" title="좌석 B11">11</a>
-                        <a href="#" class="seat" data-seat="B12" title="좌석 B12">12</a>
-                        <a href="#" class="seat" data-seat="B13" title="좌석 B13">13</a>                                
-                    </li>
-                    <li>
-                        <span class="tit">F</span>
-                        <a href="#" class="seat" data-seat="B1" title="좌석 B1">1</a>
-                        <a href="#" class="seat" data-seat="B2" title="좌석 B2">2</a>
-                        <a href="#" class="seat" data-seat="B3" title="좌석 B3">3</a>
-                        <a href="#" class="seat" data-seat="B4" title="좌석 B4">4</a>
-                        <a href="#" class="seat" data-seat="B5" title="좌석 B5">5</a>
-                        <a href="#" class="seat" data-seat="B6" title="좌석 B6">6</a>
-                        <a href="#" class="seat" data-seat="B7" title="좌석 B7">7</a>
-                        <a href="#" class="seat" data-seat="B8" title="좌석 B8">8</a>
-                        <a href="#" class="seat" data-seat="B9" title="좌석 B9">9</a>
-                        <a href="#" class="seat" data-seat="B10" title="좌석 B10">10</a>
-                        <a href="#" class="seat" data-seat="B11" title="좌석 B11">11</a>
-                        <a href="#" class="seat" data-seat="B12" title="좌석 B12">12</a>
-                        <a href="#" class="seat" data-seat="B13" title="좌석 B13">13</a>                                
-                    </li>
-                    <li>
-                        <span class="tit">G</span>
-                        <a href="#" class="seat" data-seat="B1" title="좌석 B1">1</a>
-                        <a href="#" class="seat" data-seat="B2" title="좌석 B2">2</a>
-                        <a href="#" class="seat" data-seat="B3" title="좌석 B3">3</a>
-                        <a href="#" class="seat" data-seat="B4" title="좌석 B4">4</a>
-                        <a href="#" class="seat" data-seat="B5" title="좌석 B5">5</a>
-                        <a href="#" class="seat" data-seat="B6" title="좌석 B6">6</a>
-                        <a href="#" class="seat" data-seat="B7" title="좌석 B7">7</a>
-                        <a href="#" class="seat" data-seat="B8" title="좌석 B8">8</a>
-                        <a href="#" class="seat" data-seat="B9" title="좌석 B9">9</a>
-                        <a href="#" class="seat" data-seat="B10" title="좌석 B10">10</a>
-                        <a href="#" class="seat" data-seat="B11" title="좌석 B11">11</a>
-                        <a href="#" class="seat" data-seat="B12" title="좌석 B12">12</a>
-                        <a href="#" class="seat" data-seat="B13" title="좌석 B13">13</a>                                
-                    </li>
-                    <li>
-                        <span class="tit">H</span>
-                        <a href="#" class="seat" data-seat="B1" title="좌석 B1">1</a>
-                        <a href="#" class="seat" data-seat="B2" title="좌석 B2">2</a>
-                        <a href="#" class="seat" data-seat="B3" title="좌석 B3">3</a>
-                        <a href="#" class="seat" data-seat="B4" title="좌석 B4">4</a>
-                        <a href="#" class="seat" data-seat="B5" title="좌석 B5">5</a>
-                        <a href="#" class="seat" data-seat="B6" title="좌석 B6">6</a>
-                        <a href="#" class="seat" data-seat="B7" title="좌석 B7">7</a>
-                        <a href="#" class="seat" data-seat="B8" title="좌석 B8">8</a>
-                        <a href="#" class="seat" data-seat="B9" title="좌석 B9">9</a>
-                        <a href="#" class="seat" data-seat="B10" title="좌석 B10">10</a>
-                        <a href="#" class="seat" data-seat="B11" title="좌석 B11">11</a>
-                        <a href="#" class="seat" data-seat="B12" title="좌석 B12">12</a>
-                        <a href="#" class="seat" data-seat="B13" title="좌석 B13">13</a>                                
-                    </li>
+                </c:forEach>
                 </ul>
             </article>
             <p>
@@ -202,7 +83,6 @@
                 <li><i class="bg_seat_reserved"></i>예매완료</li>
                 <li><i class="bg_seat_not"></i>선택불가</li>
             </ol>
-
         </div>                
     </section>
     <section>
@@ -228,7 +108,7 @@
             <div>
                 <span>영화</span>
                 <article>
-                    <img class="poster" src="/jcinema/img/total_info_poster.jpg" alt="">
+                    <img class="poster" src="../img/total_info_poster.jpg" alt="">
                     <p class="movie-info">
                         <strong>겨울왕국2</strong>
                         <b>2D</b>
@@ -276,5 +156,4 @@
         </div>
     </section>
 </div>
-
 <%@ include file="../_footer.jsp" %>

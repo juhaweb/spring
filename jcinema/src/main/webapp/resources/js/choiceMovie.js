@@ -1,83 +1,80 @@
 $(document).ready(function(){
 	
-	// 영화관 데이터 불러오기
+	var theaters_li   = $('.theaters > li');
+	var theaters      = $('.theaters > li > ol');
 	
-	var theaters_li = $('.theaters > li ');
-	var theaters 	= $('.theaters > li > ol');
-		
-	// 지역메뉴 클릭	
+	// 지역메뉴 클릭
 	theaters_li.click(function(e){
 		e.preventDefault();
 		
 		var i = $(this).index();
-		alert("클릭1");
-		// li class="active"
+		
+		// active						
 		theaters_li.removeClass().eq(i).addClass('active');
-		// ol class="on"
-		theaters.removeClass().eq(i).addClass('on');
+		
+		// on
+		theaters.removeClass().eq(i).addClass('on');			
 	});
 	
 	
-	// 극장이름 클릭 (동적 이벤트 생성)
-	$(document).on('click','.theaters ol > li',function(e){
+	// 극장이름 클릭(동적이벤트 구현)
+	$(document).on('click', '.theaters ol > li', function(e){			
 		e.preventDefault();
 		
 		var theaters_all = $('.theaters ol > li');
 		
-		theaters_all.removeClass('chk');
+		theaters_all.removeClass('chk');			
 		$(this).addClass('chk');
 		
-		// 상영중인 영화 불러오기
 		
-		var theater_no = $(this).attr('data-theater-no');
+		var theater_no    = $(this).attr('data-theater-no');			
 		$('input[name=theater_no]').val(theater_no);
 		
 		var schedule_date = $('input[name=movie_date]').val();
 		
-		var url ="/jcinema/api/schedule/movies?theater_no="+theater_no+"&schedule_date="+schedule_date;
-		var movie_list = $(".rank > article > ul");	
+		
+		var url = "/jcinema/api/schedule/movies?theater_no="+theater_no+"&schedule_date="+schedule_date;  
+		var movie_list = $('.rank > article > ul');
 		
 		
 		
 		movie_list.empty();
-		
-		$.get(url,function(data){
-			
+					
+		$.get(url, function(data){
+
 			var data = JSON.parse(data);
 			
-			// object를 기준으로 each가 동작하기때문에 json data parse해줘야함. 			
-			$.each(data,function(i, value){
+			$.each(data, function(i, value){
 				
-				var grade = null;
+				var grade = null; 
 				
-				if(value.movie_grade =='0'){
-					grade ='gradeAll';
+				if(value.movie_grade == '0'){
+					grade = 'gradeAll';
 				}else if(value.movie_grade == '12'){
-					grade ='grade12';
+					grade = 'grade12';
 				}else if(value.movie_grade == '15'){
-					grade ='grade15';
+					grade = 'grade15';
 				}else if(value.movie_grade == '18'){
-					grade ='grade18';
+					grade = 'grade18';
 				}else if(value.movie_grade == '19'){
-					grade ='grade19';
-				}
+					grade = 'grade19';
+				}									
 				
 				movie_list.append(
-					"<li data-movie-no='"+value.movie_no+"'>" +
+					"<li data-movie-no='"+value.movie_no+"'>"+
 					"<a href='#'>"+
 					"<span class='grade "+grade+"'></span>"+
 					"<span class='tit'>"+value.movie_title+"</span>"+
-					"</a>" +
+					"</a>"+
 					"</li>"
 				);
 				
 			});
-			
 		});
 		
 	});
 	
-	// 영화선택 동적이벤트 
+	// 영화선택
 	$(document).on('click', '.rank > article > ul > li', function(e){
 		e.preventDefault();
 		
@@ -85,15 +82,14 @@ $(document).ready(function(){
 		var schedule_date = $('input[name=movie_date]').val();
 		var schedule_theater_no = $('input[name=theater_no]').val();
 		
-		var showtime_section_div	= $('.showtime > article > section > div');
-		var showtime_nodata			= $('.showtime .nodata');
-				
-		var url = "/jcinema/api/movies-schedule";
+		var showtime_section_div = $('.showtime > article > section > div');
+		var showtime_nodata  = $('.showtime .nodata');
 		
+		var url = "/jcinema/api/movie-roundview";
+		                   
 		var param = {"schedule_date": schedule_date, 
-					 "theater_no": schedule_theater_no, 
-					 "movie_no": movie_no}; 
-		
+					 "schedule_theater_no": schedule_theater_no, 
+					 "schedule_movie_no": movie_no}; 
 		
 		
 		$.get(url, param, function(data){
@@ -102,64 +98,47 @@ $(document).ready(function(){
 			
 			if(data.length > 0){
 				
-				//데이터가 있을때 .nodata 삭제 
 				showtime_nodata.remove();
 				showtime_section_div.empty();
 				
-				// 왜 이중포문이냐면 관별 회차가 다르기 때문에 
-				for(var a=0; a<data.length; a++){
-
+				for(var a=0 ; a<data.length ; a++){
+					
 					showtime_section_div.append("<ul class='round_view'></ul>");
 					
 					var dataObj = data[a];
 					
-					for(var b=0; b<dataObj.length; b++){
+					for(var b=0 ; b<dataObj.length ; b++){
 						
-						showtime_section_div.children().last().append("<li>" +
-																	  "<a href='#' data-theater-no='"+dataObj[b].schedule_theater_no+
-																	  "'data-screen-no='"+dataObj[b].schedule_screen_no+
-																	  "' data-movie-no='"+dataObj[b].schedule_movie_no+
-																	  "' data-movie-date='"+dataObj[b].schedule_date+
-																	  "' data-round-view='"+dataObj[b].schedule_round_view+"' >"+
-																	  "<span>"+dataObj[b].schedule_round_view+"회차</span>"+
-																  	  "<span>"+dataObj[b].schedule_start_time.substring(0,5)+" ~ "+dataObj[b].schedule_end_time.substring(0,5)+"</span>"+
-																  	  "<span><em>24</em>석/<em>80</em>석</span>"+
-																	  "</a>" + 
-																	  "</li>");
-						
+						showtime_section_div.children().last().append("<li>"+
+																	   "<a href='#' data-theater-no='"+dataObj[b].schedule_theater_no+
+																	   "' data-screen-no='"+dataObj[b].schedule_screen_no+
+																	   "' data-movie-no='"+dataObj[b].schedule_movie_no+
+																	   "' data-movie-date='"+dataObj[b].schedule_date+
+																	   "' data-round-view='"+dataObj[b].schedule_round_view+"'>"+
+																	   "<span>"+dataObj[b].schedule_round_view+"회차</span>"+
+																	   "<span>"+dataObj[b].schedule_start_time.substring(0, 5)+" ~ "+dataObj[b].schedule_end_time.substring(0, 5)+"</span>"+
+																	   "<span><em>24</em>석/<em>80</em>석</span>"+
+																	   "</a>"+
+																	   "</li>");
 					}
-					
-					
 				}
-				
 			}
-			
-		});
-		// json 종료
-		
+		});			
 	});
-	// 동적이벤트 종료
 	
-	
-	
-	// 영화상영일정 클릭 (동정이벤트 또 생성)
-	$(document).on('click','.round_view > li > a', function(e){
-//		e.preventDefault();
+	// 영화상영 회차 클릭(동적태그 이벤트)		
+	$(document).on('click', '.round_view > li > a', function(e){
 		
 		var theater_no = $(this).attr('data-theater-no');
-		var screen_no = $(this).attr('data-screen-no');
-		var movie_date = $(this).attr('data-movie-no');
-		var movie_no = $(this).attr('data-movie-date');
-		var round_view = $(this).attr('data-round-view');		
+		var screen_no  = $(this).attr('data-screen-no');
+		var movie_date = $(this).attr('data-movie-date');
+		var movie_no   = $(this).attr('data-movie-no');
+		var round_view = $(this).attr('data-round-view');
 		
-		location.href='/jcinema/ticketing/choice-seat?theater_no='+theater_no+'&screen_no='+screen_no+'&movie_date='+movie_date+'&movie_no='+movie_no+'&round_view='+round_view ;
-		
-		
+		location.href = '/jcinema/ticketing/choice-seat?seat_theater_no='+theater_no+'&seat_screen_no='+screen_no+'&ticket_movie_date='+movie_date+'&ticket_movie_no='+movie_no+'&ticket_round_view='+round_view;
 	});
 	
 	
-	
-
 	
 	// 영화관 데이터 불러오기
 	$.ajax({

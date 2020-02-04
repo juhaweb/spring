@@ -2,6 +2,7 @@ package kr.co.jcinema.admin.vo;
 
 public class AdminMovieVo {
 
+	
 	private int movie_no; 
 	private String movie_title; 
 	private String movie_grade; 
@@ -17,9 +18,6 @@ public class AdminMovieVo {
 	private String movie_desc; 
 	private String movie_director; 
 	private String movie_actor;
-	
-	
-	
 	
 	public int getMovie_no() {
 		return movie_no;
@@ -111,7 +109,6 @@ public class AdminMovieVo {
 	public void setMovie_actor(String movie_actor) {
 		this.movie_actor = movie_actor;
 	}
-	
 	
 	
 	

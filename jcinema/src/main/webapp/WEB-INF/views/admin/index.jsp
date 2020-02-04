@@ -1,5 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="./_header.jsp" %>
+
+<div>
+    <div class="container">
 <%@ include file="./_aside.jsp" %>
 
         <section class="main">

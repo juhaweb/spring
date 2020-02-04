@@ -1,15 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../_header.jsp" %>
-
 <div id="sub" class="order-confirm">
-
     <nav class="sub-menu"></nav>
     <section>
         <div class="movie-info">
             <h1>주문/결제</h1>
             <article>
                 <div>
-                    <img src="/jcinema/img/total_info_poster.jpg" alt="">
+                    <img src="../img/total_info_poster.jpg" alt="">
                     <table>
                         <tr>
                             <th class="tit" colspan="4">겨울왕국2(2D자막)</th>
@@ -105,7 +103,5 @@
             </div>
         </div>
     </section>
-   
 </div>
-
 <%@ include file="../_footer.jsp" %>

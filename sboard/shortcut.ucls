@@ -3,7 +3,7 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="kr.co.sboard.controller.MemberController" project="sboard" 
     file="/sboard/src/main/java/kr/co/sboard/controller/MemberController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="437" y="185"/>    
+    <position height="-1" width="-1" x="417" y="179"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="kr.co.sboard.controller.BoardController" project="sboard" 
     file="/sboard/src/main/java/kr/co/sboard/controller/BoardController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="713" y="204"/>    
+    <position height="-1" width="-1" x="726" y="195"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -21,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="kr.co.sboard.controller.MainController" project="sboard" 
     file="/sboard/src/main/java/kr/co/sboard/controller/MainController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="218" y="133"/>    
+    <position height="-1" width="-1" x="174" y="126"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="kr.co.sboard.dao.MemberDAO" project="sboard" 
     file="/sboard/src/main/java/kr/co/sboard/dao/MemberDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="217" y="512"/>    
+    <position height="-1" width="-1" x="182" y="470"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -39,7 +39,7 @@
   </class>  
   <class id="5" language="java" name="kr.co.sboard.dao.BoardDAO" project="sboard" 
     file="/sboard/src/main/java/kr/co/sboard/dao/BoardDAO.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="948" y="530"/>    
+    <position height="-1" width="-1" x="982" y="493"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -48,7 +48,7 @@
   </class>  
   <class id="6" language="java" name="kr.co.sboard.service.MemberService" project="sboard" 
     file="/sboard/src/main/java/kr/co/sboard/service/MemberService.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="452" y="449"/>    
+    <position height="-1" width="-1" x="434" y="460"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -57,7 +57,7 @@
   </class>  
   <class id="7" language="java" name="kr.co.sboard.service.BoardService" project="sboard" 
     file="/sboard/src/main/java/kr/co/sboard/service/BoardService.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="683" y="501"/>    
+    <position height="-1" width="-1" x="698" y="513"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -66,34 +66,50 @@
   </class>  
   <association id="8">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="9" name="service"/>      
-      <multiplicity id="10" minimum="0" maximum="1"/>    
+      <attribute id="9" name="service">        
+        <position height="0" width="0" x="-18" y="11"/>      
+      </attribute>      
+      <multiplicity id="10" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-18" y="11"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="11">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="12" name="dao"/>      
-      <multiplicity id="13" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="14">    
     <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="15" name="dao"/>      
-      <multiplicity id="16" minimum="0" maximum="1"/>    
+      <attribute id="12" name="dao">        
+        <position height="0" width="0" x="34" y="-37"/>      
+      </attribute>      
+      <multiplicity id="13" minimum="0" maximum="1">        
+        <position height="0" width="0" x="34" y="-37"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="17">    
+  <association id="14">    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="18" name="service"/>      
-      <multiplicity id="19" minimum="0" maximum="1"/>    
+      <attribute id="15" name="service">        
+        <position height="0" width="0" x="15" y="12"/>      
+      </attribute>      
+      <multiplicity id="16" minimum="0" maximum="1">        
+        <position height="0" width="0" x="15" y="12"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="17">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="18" name="dao">        
+        <position height="0" width="0" x="-35" y="-42"/>      
+      </attribute>      
+      <multiplicity id="19" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-35" y="-42"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 

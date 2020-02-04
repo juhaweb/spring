@@ -1,9 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../_header.jsp" %>
-
 <div>
     <div class="container">
-    <%@ include file="../_aside.jsp" %>
+        <%@ include file="../_aside.jsp" %>
         <section id="sub" class="movie-register">
 
             <nav>
@@ -73,8 +72,6 @@
                 </form>
             </article>
         </section>
-        
     </div>
 </div>
-
 <%@ include file="../_footer.jsp" %>

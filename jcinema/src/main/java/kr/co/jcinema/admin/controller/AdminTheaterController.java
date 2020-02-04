@@ -17,4 +17,6 @@ public class AdminTheaterController {
 		return "/admin/theater/register-screen";
 	}
 	
+	
+	
 }

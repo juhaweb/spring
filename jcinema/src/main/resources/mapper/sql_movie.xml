@@ -30,8 +30,6 @@
 		ORDER BY b.movie_ticket_rate DESC, b.movie_release_date DESC;
 	</select>
 	
-	
-	
 	<insert id="INSERT_MOVIE_SCHEDULE">
 		INSERT INTO `JC_MOVIE_SCHEDULE` SET
 		schedule_theater_no=#{schedule_theater_no},
@@ -53,13 +51,12 @@
 	</select>
 	
 	<select id="SELECT_MOVIE_ROUND_VIEW" resultType="kr.co.jcinema.admin.vo.AdminMovieScheduleVo">
-		SELECT * FROM `JC_MOVIE_SCHEDULE` 
+		SELECT * FROM `JC_MOVIE_SCHEDULE`
 		WHERE 
-			`schedule_date`=#{schedule_date} AND  
-			`schedule_theater_no`=#{schedule_theater_no} AND  
+			`schedule_date`=#{schedule_date} AND 
+			`schedule_theater_no`=#{schedule_theater_no} AND 
 			`schedule_movie_no`=#{schedule_movie_no}
-			ORDER BY `schedule_screen_no` ASC, 
-			`schedule_round_view` ASC;
+		ORDER BY `schedule_screen_no` ASC, `schedule_round_view` ASC;
 	</select>
 	
 	

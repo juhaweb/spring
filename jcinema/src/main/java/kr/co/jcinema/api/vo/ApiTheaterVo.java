@@ -1,16 +1,14 @@
 package kr.co.jcinema.api.vo;
 
 public class ApiTheaterVo {
-
-	private int theater_no;
-	private int theater_local_code;
+	
+	private int    theater_no;
+	private int    theater_local_code;
 	private String theater_name;
 	private String theater_city;
 	private String theater_addr;
 	private String theater_tel;
-	private int theater_screen_count;
-	
-	
+	private int    theater_screen_count;
 	
 	public int getTheater_no() {
 		return theater_no;
@@ -54,8 +52,4 @@ public class ApiTheaterVo {
 	public void setTheater_screen_count(int theater_screen_count) {
 		this.theater_screen_count = theater_screen_count;
 	}
-	
-	
-	
-	
 }

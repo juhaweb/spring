@@ -14,7 +14,7 @@ import kr.co.jcinema.api.vo.ApiTheaterVo;
 
 @Service
 public class ApiService {
-	
+
 	@Inject
 	private ApiDao dao;
 	
@@ -45,6 +45,4 @@ public class ApiService {
 	public List<AdminMovieScheduleVo> selectMovieRoundView(AdminMovieScheduleVo vo) { 
 		return dao.selectMovieRoundView(vo);
 	}
-	
-	
 }

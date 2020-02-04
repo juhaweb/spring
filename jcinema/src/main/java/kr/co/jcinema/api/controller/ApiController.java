@@ -8,6 +8,7 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
@@ -21,7 +22,6 @@ import kr.co.jcinema.api.vo.ApiTheaterVo;
 @Controller
 public class ApiController {
 
-	
 	@Inject
 	private ApiService service;
 	
@@ -49,8 +49,6 @@ public class ApiController {
 		return new Gson().toJson(movieSchedule);
 	}
 	
-	
-	// 날짜 상영관 영화 클릭시 -> 회차정보 출력
 	@GetMapping(value="/api/movie-roundview", produces="text/plain;charset=UTF-8")
 	@ResponseBody
 	public String getMovieRoundView(AdminMovieScheduleVo vo){
@@ -62,7 +60,7 @@ public class ApiController {
 		return new Gson().toJson(movieSchedulesList);
 	}
 	
-	// 극장별 영화스케쥴 불러오기
+	
 	@GetMapping(value="/api/schedule/movies", produces="text/plain;charset=UTF-8")
 	@ResponseBody
 	public String getMovies(int theater_no, String schedule_date) {
@@ -74,9 +72,4 @@ public class ApiController {
 		List<AdminMovieVo> movies = service.selectMovies(vo);
 		return new Gson().toJson(movies);
 	}
-	
-	
-	
-	
-	
 }

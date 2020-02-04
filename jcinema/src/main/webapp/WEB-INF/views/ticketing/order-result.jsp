@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../_header.jsp" %>
-        
 <div id="sub" class="order-result">
 
     <nav class="sub-menu"></nav>
@@ -49,5 +48,4 @@
         </div>
     </section>
 </div>
-
 <%@ include file="../_footer.jsp" %>

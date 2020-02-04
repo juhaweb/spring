@@ -1,7 +1,7 @@
 package kr.co.jcinema.admin.vo;
 
 public class AdminGenerateVo {
-
+	
 	private int theater_no;
 	private int screen_no;
 	private String theater_city;
@@ -12,7 +12,6 @@ public class AdminGenerateVo {
 	private int movie_no;
 	private String movie_title;
 	private int price;
-	
 	
 	public int getTheater_no() {
 		return theater_no;
@@ -74,9 +73,5 @@ public class AdminGenerateVo {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	
-	
-	
-	
 	
 }

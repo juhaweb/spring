@@ -28,6 +28,4 @@ public class AdminMovieService {
 	public void insertMovieSchedule(AdminMovieScheduleVo vo) {
 		dao.insertMovieSchedule(vo);
 	}
-	
-	
 }

@@ -10,20 +10,16 @@ public class AdminMovieScheduleVo {
 	private String schedule_end_time;
 	private int schedule_round_view;
 	
-	// 추가
+	// 추가필드
 	private String movie_title;
 	
-		
 	public String getMovie_title() {
 		return movie_title;
 	}
+	
 	public void setMovie_title(String movie_title) {
 		this.movie_title = movie_title;
 	}
-	
-	
-	
-	
 	
 	
 	
@@ -69,12 +65,5 @@ public class AdminMovieScheduleVo {
 	public void setSchedule_round_view(int schedule_round_view) {
 		this.schedule_round_view = schedule_round_view;
 	}
-	
-	
-	
-	
-	
-	
-	
 	
 }

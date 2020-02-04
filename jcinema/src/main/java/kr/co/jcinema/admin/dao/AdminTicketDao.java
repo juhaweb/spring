@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import kr.co.jcinema.admin.vo.AdminTicketVo;
 
@@ -29,6 +30,5 @@ public class AdminTicketDao {
 	
 	public void updateTicket() {}
 	public void deleteTicket() {}
-	
 	
 }

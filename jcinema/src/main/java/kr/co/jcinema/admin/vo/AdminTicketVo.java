@@ -1,7 +1,7 @@
 package kr.co.jcinema.admin.vo;
 
 public class AdminTicketVo {
-
+	
 	private String ticket_no;
 	private int ticket_movie_no;
 	private String ticket_movie_date;
@@ -12,9 +12,28 @@ public class AdminTicketVo {
 	private int ticket_is_valid;
 	private int ticket_price;
 	
+	// 추가필드
+	private int seat_theater_no;
+	private int seat_screen_no;
 	
 	
 	
+	
+	
+	
+	
+	public int getSeat_theater_no() {
+		return seat_theater_no;
+	}
+	public void setSeat_theater_no(int seat_theater_no) {
+		this.seat_theater_no = seat_theater_no;
+	}
+	public int getSeat_screen_no() {
+		return seat_screen_no;
+	}
+	public void setSeat_screen_no(int seat_screen_no) {
+		this.seat_screen_no = seat_screen_no;
+	}
 	public String getTicket_no() {
 		return ticket_no;
 	}
@@ -69,9 +88,7 @@ public class AdminTicketVo {
 	public void setTicket_price(int ticket_price) {
 		this.ticket_price = ticket_price;
 	}
-	
-	
-	
+
 	
 	
 }

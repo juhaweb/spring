@@ -44,20 +44,17 @@ public class ApiDao {
 	}
 	
 	public void updateTheater() {}
-	public void deleteTheater() {}	
-
+	public void deleteTheater() {}
 	
-	public List<AdminMovieVo> selectMovies(AdminMovieScheduleVo vo){
+	
+	public List<AdminMovieVo> selectMovies(AdminMovieScheduleVo vo) {
 		return mybatis.selectList("mapper.sql_movie.SELECT_MOVIES_BY_THEATER", vo);
 	}
 	
-	
-	// 타이틀을 이용해 영화1에 대한 정보 가져오기 (admin 영화검색)
 	public List<AdminMovieVo> selectMovies(String title) {
 		return mybatis.selectList("mapper.sql_movie.SELECT_MOVIES", title);
 	}
 	
-	// 
 	public AdminMovieScheduleVo selectMovieSchedule(AdminMovieScheduleVo vo) { 
 		return mybatis.selectOne("mapper.sql_movie.SELECT_MOVIE_SCHEDULE", vo);
 	}
@@ -66,6 +63,8 @@ public class ApiDao {
 		return mybatis.selectList("mapper.sql_movie.SELECT_MOVIE_ROUND_VIEW", vo);
 	}
 	
-	
-	
 }
+
+
+
+
