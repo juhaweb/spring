@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import kr.co.jcinema.admin.vo.AdminTicketVo;
 import kr.co.jcinema.dao.MemberDao;
 import kr.co.jcinema.dao.TicketingDao;
+import kr.co.jcinema.vo.MovieScheduleWithTheaterVo;
 import kr.co.jcinema.vo.SeatVo;
 
 @Service
@@ -23,10 +24,10 @@ public class TicketingService {
 	
 	
 	// 좌석 자르기 
-	public List<List<SeatVo>> selectSeat(AdminTicketVo tvo ) {
+	public List<List<SeatVo>> selectSeat(AdminTicketVo tvo) {
 		
 		List<List<SeatVo>> totalSeatList = new ArrayList<List<SeatVo>>();
-		
+	
 		List<SeatVo> seatList = dao.selectSeat(tvo);
 		
 		// subList 별로안좋으니 쓰지말래
@@ -42,6 +43,14 @@ public class TicketingService {
 		return totalSeatList;
 	}
 	
+	
+	// 상영관별 영화선택
+	public MovieScheduleWithTheaterVo selectMovieScheduleWithTheater(AdminTicketVo vo){
+		
+		return dao.selectMovieScheduleWithTheater(vo);
+		
+		
+	}
 	
 	
 }

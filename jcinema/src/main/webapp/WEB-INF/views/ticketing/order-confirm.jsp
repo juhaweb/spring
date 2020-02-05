@@ -7,26 +7,26 @@
             <h1>주문/결제</h1>
             <article>
                 <div>
-                    <img src="../img/total_info_poster.jpg" alt="">
+                    <img src="/jcinema/poster/${movieInfo.movie_poster}" alt="">
                     <table>
                         <tr>
-                            <th class="tit" colspan="4">겨울왕국2(2D자막)</th>
+                            <th class="tit" colspan="4">${movieInfo.movie_title}</th>
                         </tr>
                         <tr>
                             <th>상영일</th>
-                            <td>2019-12-02 (월)</td>
+                            <td>${movieInfo.schedule_date}</td>
                             <th>상영시간</th>
-                            <td>19:10 ~ 21:03</td>
+                            <td>${movieInfo.schedule_start_time} ~ ${movieInfo.schedule_end_time}</td>
                         </tr>
                         <tr>
                             <th>상영관</th>
-                            <td>오투(부산대) 4관</td>
+                            <td>${movieInfo.theater_name} ${movieInfo.screen_name}</td>
                             <th>관람인원</th>
                             <td>성인1</td>
                         </tr>
                         <tr>
                             <th>좌석</th>
-                            <td colspan="3">E3</td>                                    
+                            <td colspan="3">${seat}</td>                                    
                         </tr>
                     </table>
                     <h2>10,000<i>원</i></h2>

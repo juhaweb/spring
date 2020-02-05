@@ -22,8 +22,7 @@ public class AdminTheaterDao {
 	}
 	
 	public List<AdminTheaterVo> selectTheaters() {
-		
-		mybatis.selectList("");
+		mybatis.selectList("mapper.sql_seat.SELECT_SEAT");
 		
 		return null;
 	}

@@ -13,6 +13,7 @@ public class AdminMovieScheduleVo {
 	// 추가필드
 	private String movie_title;
 	
+	
 	public String getMovie_title() {
 		return movie_title;
 	}

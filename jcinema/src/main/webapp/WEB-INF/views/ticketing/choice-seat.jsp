@@ -2,6 +2,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ include file="../_header.jsp" %>
+<script src="/jcinema/js/choiceSeat.js"></script>
+
 <div id="sub" class="choice-seat">
     <nav class="sub-menu"></nav>
     <section>
@@ -108,11 +110,11 @@
             <div>
                 <span>영화</span>
                 <article>
-                    <img class="poster" src="../img/total_info_poster.jpg" alt="">
+                    <img class="poster" src="/jcinema/poster/${movieInfo.movie_poster} alt="">
                     <p class="movie-info">
-                        <strong>겨울왕국2</strong>
-                        <b>2D</b>
-                        <em>전체관람가</em>
+                        <strong>${movieInfo.movie_title}</strong>
+                        <b>${movieInfo.movie_genre}</b>
+                        <em>${movieInfo.movie_grade}</em>
                     </p>
                 </article>
                 
@@ -122,23 +124,23 @@
                 <table>
                     <tr>
                         <td>상영일</td>
-                        <td>2019-12-02(월)</td>
+                        <td>${movieInfo.schedule_date}</td>
                     </tr>
                     <tr>
                         <td>상영시간</td>
-                        <td>17:00 ~ 18:53</td>
+                        <td>${movieInfo.schedule_start_time}~${movieInfo.schedule_end_time}</td>
                     </tr>
                     <tr>
                         <td>상영관</td>
-                        <td>오투(부산대)</td>
+                        <td>${movieInfo.theater_name}</td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td>4관</td>
+                        <td>${movieInfo.screen_name}</td>
                     </tr>
                     <tr>
                         <td>좌석</td>
-                        <td>C5, C6</td>
+                        <td class="result_seat">0</td>
                     </tr>
                 </table>
                 <h2>28,000<span>원</span></h2>

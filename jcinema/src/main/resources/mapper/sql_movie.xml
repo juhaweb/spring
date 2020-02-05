@@ -53,11 +53,27 @@
 	<select id="SELECT_MOVIE_ROUND_VIEW" resultType="kr.co.jcinema.admin.vo.AdminMovieScheduleVo">
 		SELECT * FROM `JC_MOVIE_SCHEDULE`
 		WHERE 
-			`schedule_date`=#{schedule_date} AND 
-			`schedule_theater_no`=#{schedule_theater_no} AND 
-			`schedule_movie_no`=#{schedule_movie_no}
+		`schedule_date`=#{schedule_date} AND 
+		`schedule_theater_no`=#{schedule_theater_no} AND 
+		`schedule_movie_no`=#{schedule_movie_no}
 		ORDER BY `schedule_screen_no` ASC, `schedule_round_view` ASC;
 	</select>
+	
+	<select id="SELECT_MOVIE_SCHEDULE_WITH_THEATER" resultType="kr.co.jcinema.vo.MovieScheduleWithTheaterVo">
+		SELECT a.*, b.theater_name, c.screen_name, d.movie_title, d.movie_poster, d.movie_grade, d.movie_genre 
+		FROM `JC_MOVIE_SCHEDULE` AS a 
+		JOIN `JC_THEATER` AS b ON a.schedule_theater_no = b.theater_no 
+		JOIN `JC_SCREEN` AS c ON 
+		a.schedule_theater_no = c.screen_theater_no AND 
+		a.schedule_screen_no = c.screen_no 
+		JOIN `JC_MOVIE` AS d ON a.schedule_movie_no = d.movie_no
+		WHERE a.schedule_movie_no=#{ticket_movie_no} AND 
+			  a.schedule_theater_no=#{seat_theater_no} AND 
+			  a.schedule_screen_no=#{seat_screen_no} AND 
+			  a.schedule_date=#{ticket_movie_date} AND 
+			  a.schedule_round_view=#{ticket_round_view} ;
+	</select>
+	
 	
 	
 

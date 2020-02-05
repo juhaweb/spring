@@ -18,10 +18,6 @@ public class AdminTicketVo {
 	
 	
 	
-	
-	
-	
-	
 	public int getSeat_theater_no() {
 		return seat_theater_no;
 	}
@@ -89,6 +85,5 @@ public class AdminTicketVo {
 		this.ticket_price = ticket_price;
 	}
 
-	
 	
 }
