@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import kr.co.jcinema.admin.vo.AdminTicketVo;
+import kr.co.jcinema.vo.MovieScheduleWithTheaterVo;
 
 @Repository
 public class AdminTicketDao {
@@ -30,5 +31,8 @@ public class AdminTicketDao {
 	
 	public void updateTicket() {}
 	public void deleteTicket() {}
+	
+	
+	
 	
 }

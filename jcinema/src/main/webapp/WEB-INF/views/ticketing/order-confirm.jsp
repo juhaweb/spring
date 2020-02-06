@@ -78,30 +78,52 @@
             <a href="#">이전단계</a>
         </div>
     </section>
+    
+    <script>
+	$(function(){
+
+		var btnPay = $('.pay > a');
+
+		btnPay.click(function(){
+
+			var price	   = ('.order > h5 > b').text();
+			var discount   = ('discount > h5 > b').text();
+			var totalPrice = ('pay > h4 > b').text();
+
+			var param  = "pay_price="+price+"&";
+				param += "pay_discount="+discount+"&";
+				param += "pay_total_price="+totalPrice;
+			
+			location.href="/jcinema/ticketing/order-result?"+param;
+
+			return false; 	
+
+		});
+
+	});
+    </script>
+    
+    
     <section>
-        <div class="total-price">
-            <div class="order">
-                <span>주문금액</span>
-                <p>
-                    <strong>영화예매</strong>
-                    <em>10,000원</em>
-                </p>
-                <h5>10,000<em>원</em></h5>
-            </div>
-            <div class="discount">
-                <span>할인금액</span>
-                <p style="visibility: hidden;">
-                    <strong>영화예매</strong>
-                    <em>10,000원</em>
-                </p>
-                <h5>0<em>원</em></h5>
-            </div>
-            <div class="pay">
-                <span>총 결제 금액</span>
-                <h4>10,000<i>원</i></h4>
-                <a href="#">결제하기</a>
-            </div>
-        </div>
+	        <div class="total-price">
+	            <div class="order">
+	                <span>주문금액</span>
+	                <p>
+	                    <strong>영화예매</strong>
+	                    <em>10000원</em>
+	                </p>
+	                <h5><b>10000</b><em>원</em></h5>
+	            </div>
+	            <div class="discount">
+	                <span>할인금액</span>
+	                <h5><b>0</b><em>원</em></h5>
+	            </div>
+	            <div class="pay">
+	                <span>총 결제 금액</span>
+	                <h4><b>10000</b><i>원</i></h4>
+	                <a href="#">결제하기</a>
+	            </div>
+	        </div>
     </section>
 </div>
 <%@ include file="../_footer.jsp" %>

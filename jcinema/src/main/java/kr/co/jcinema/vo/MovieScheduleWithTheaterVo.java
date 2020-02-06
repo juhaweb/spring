@@ -9,12 +9,23 @@ public class MovieScheduleWithTheaterVo {
 	private String schedule_start_time;
 	private String schedule_end_time;
 	private int schedule_round_view;
+		// 티켓선택 추가필드
+		private String schedule_seat;
 	private String theater_name;
 	private String screen_name;
 	private String movie_title;
 	private String movie_poster;
 	private String movie_grade;
 	private String movie_genre;
+	
+	public String getSchedule_seat() {
+		return schedule_seat;
+	}
+	
+	public void setSchedule_seat(String schedule_seat) {
+		this.schedule_seat = schedule_seat;
+	}
+	
 	
 	
 	public int getSchedule_theater_no() {

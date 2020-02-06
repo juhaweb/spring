@@ -30,15 +30,7 @@
                         </select>
 
                         <select name="theater_name" id="theater_name">
-                            <option>영화관 선택</option>
-                            <option>광복</option>
-                            <option>김해부원</option>
-                            <option>대영</option>
-                            <option>동래</option>
-                            <option>동부산 아울렛</option>
-                            <option>서면(전포동)</option>
-                            <option>센텀시티</option>
-                            <option>오투(부산대)</option>
+                            <option value="24">검단</option>
                         </select>
                     </div>
 

@@ -24,10 +24,10 @@ public class TicketingDaoTest {
 	public void test() {
 		
 		AdminTicketVo tvo = new AdminTicketVo();
-		tvo.setSeat_theater_no(115);
-		tvo.setSeat_screen_no(1);
-		tvo.setTicket_screen_no(1);
-		tvo.setTicket_movie_no(56);
+		tvo.setSeat_theater_no("115");
+		tvo.setSeat_screen_no("1");
+		tvo.setTicket_screen_no("1");
+		tvo.setTicket_movie_no("56");
 		tvo.setTicket_movie_date("2020-02-07");
 		tvo.setTicket_round_view("1");
 		

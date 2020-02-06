@@ -13,8 +13,8 @@
                                 
             <article>
                 <form action="/jcinema/admin/ticket/generate" method="post">
-                	<input type="hidden" name="theater_no" />
-        			<input type="hidden" name="screen_no" />
+                	<input type="text" name="theater_no" />
+        			<input type="text" name="screen_no" />
         			
                     <div class="field">
                         <label for="theater_city">영화관</label>
@@ -32,7 +32,7 @@
 
                         <select name="theater_name" id="theater_name">
                             <option>영화관 선택</option>
-                            <option value="115">오투(부산대)</option>
+                            <option value="24">검단</option>
                         </select>
                     </div>
                     <div class="field">

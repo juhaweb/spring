@@ -45,7 +45,7 @@
                         </select>
                         <select name="schedule_theater_no" id="theater_name">
                             <option>영화관 선택</option>
-                            <option value="115">오투(부산대)</option>
+                            <option value="24">검단</option>
                         </select>
                     </div>
 

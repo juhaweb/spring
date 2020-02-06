@@ -2,27 +2,29 @@ package kr.co.jcinema.admin.vo;
 
 public class AdminGenerateVo {
 	
-	private int theater_no;
-	private int screen_no;
+	private String theater_no;
+	private String screen_no;
 	private String theater_city;
 	private String theater_name;
 	private String screen_name;
 	private String movie_date;
 	private String round_view;
-	private int movie_no;
+	private String movie_no;
 	private String movie_title;
-	private int price;
+	private String price;
 	
-	public int getTheater_no() {
+	
+	
+	public String getTheater_no() {
 		return theater_no;
 	}
-	public void setTheater_no(int theater_no) {
+	public void setTheater_no(String theater_no) {
 		this.theater_no = theater_no;
 	}
-	public int getScreen_no() {
+	public String getScreen_no() {
 		return screen_no;
 	}
-	public void setScreen_no(int screen_no) {
+	public void setScreen_no(String screen_no) {
 		this.screen_no = screen_no;
 	}
 	public String getTheater_city() {
@@ -55,10 +57,10 @@ public class AdminGenerateVo {
 	public void setRound_view(String round_view) {
 		this.round_view = round_view;
 	}
-	public int getMovie_no() {
+	public String getMovie_no() {
 		return movie_no;
 	}
-	public void setMovie_no(int movie_no) {
+	public void setMovie_no(String movie_no) {
 		this.movie_no = movie_no;
 	}
 	public String getMovie_title() {
@@ -67,11 +69,14 @@ public class AdminGenerateVo {
 	public void setMovie_title(String movie_title) {
 		this.movie_title = movie_title;
 	}
-	public int getPrice() {
+	public String getPrice() {
 		return price;
 	}
-	public void setPrice(int price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
+	
+	
+	
 	
 }

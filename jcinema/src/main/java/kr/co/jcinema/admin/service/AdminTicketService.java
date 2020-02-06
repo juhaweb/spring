@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import kr.co.jcinema.admin.dao.AdminTicketDao;
 import kr.co.jcinema.admin.vo.AdminGenerateVo;
 import kr.co.jcinema.admin.vo.AdminTicketVo;
+import kr.co.jcinema.vo.MovieScheduleWithTheaterVo;
 
 @Service
 public class AdminTicketService {
@@ -49,6 +50,7 @@ public class AdminTicketService {
 	public List<AdminTicketVo> createTicket(AdminGenerateVo vo) {
 		
 		char[] alphabet = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'};
+	
 		
 		String ticketNo = vo.getTheater_no() + 
 						  vo.getScreen_no() + 
@@ -63,6 +65,7 @@ public class AdminTicketService {
 			for(int col=1 ; col<=10 ; col++) {		
 				
 				AdminTicketVo ticket = new AdminTicketVo();
+				
 				ticket.setTicket_no(ticketNo+row+col);
 				ticket.setTicket_movie_no(vo.getMovie_no());
 				ticket.setTicket_movie_date(vo.getMovie_date());
@@ -78,6 +81,8 @@ public class AdminTicketService {
 		
 		return tickets;		
 	}
+	
+	
 	
 	
 }

@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import kr.co.jcinema.admin.vo.AdminTicketVo;
 import kr.co.jcinema.service.TicketingService;
+import kr.co.jcinema.vo.MemberVo;
 import kr.co.jcinema.vo.MovieScheduleWithTheaterVo;
+import kr.co.jcinema.vo.PaymentVo;
 import kr.co.jcinema.vo.SeatVo;
 
 @Controller
@@ -37,6 +39,7 @@ public class TicketingController {
 		
 		model.addAttribute("totalSeatList", totalSeatList);
 		model.addAttribute("movieInfo", movieInfo);
+		
 		// 세션에 movieInfo를 저장하자 ★ 중요테크닉: 컴포넌트간의 데이터 공유에도 사용
 		session.setAttribute("movieInfo", movieInfo);
 		
@@ -46,9 +49,10 @@ public class TicketingController {
 
 	// 세션을가지고 선택된 좌석 정보 땡겨오기 (choice-seat -> order-confirm)
 	@GetMapping ("/ticketing/order-confirm")  //String seat만 파라미터로 받음
-	public String orderConfirm(String seat, Model model) {
+	public String orderConfirm(String seat, HttpSession session) {
 		
-		model.addAttribute("seat",seat);
+		// 세션에 seat 정보 저장. 
+		session.setAttribute("seat",seat);		
 		
 		return "/ticketing/order-confirm";
 	}
@@ -56,9 +60,25 @@ public class TicketingController {
 	
 	
 	
-	
+	// 좌석정보 선택후 결제전송 
 	@GetMapping ("/ticketing/order-result")
-	public String orderResult() {
+	public String orderResult(HttpSession session, PaymentVo pvo) {
+		
+		// dao adminTicketDao. 
+		MovieScheduleWithTheaterVo vo = (MovieScheduleWithTheaterVo) session.getAttribute("movieInfo");
+		String seat = (String) session.getAttribute("seat");
+		MemberVo member = (MemberVo) session.getAttribute("member");
+		
+		vo.setSchedule_seat(seat);
+		String ticketNo = service.selectTicketNo(vo);
+				
+		// pvo.setPay_user_id(member.getUser_id());
+		pvo.setPay_user_id("admin");
+		pvo.setPay_ticket_no(ticketNo);
+		pvo.setPay_ticket_amount(1);
+		
+		service.insertPayment(pvo);
+		
 		return "/ticketing/order-result";
 	}
 	
