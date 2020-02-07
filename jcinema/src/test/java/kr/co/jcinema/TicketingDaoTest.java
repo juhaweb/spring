@@ -35,9 +35,6 @@ public class TicketingDaoTest {
 		System.out.println(list);
 	}
 	
-	
-	public void getTicket() {
-		System.out.println("getTicket..½ÇÇà...");
-	}
+
 	
 }
