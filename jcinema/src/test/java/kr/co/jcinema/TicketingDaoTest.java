@@ -21,7 +21,7 @@ public class TicketingDaoTest {
 	private TicketingDao dao;
 	
 	@Test // 이걸 붙여야 테스트가 됨. 
-	public void test() {
+	public void getSeat() {
 		
 		AdminTicketVo tvo = new AdminTicketVo();
 		tvo.setSeat_theater_no("115");
@@ -34,8 +34,6 @@ public class TicketingDaoTest {
 		List<SeatVo> list = dao.selectSeat(tvo);
 		System.out.println(list);
 	}
-	
-	
 	
 	
 	public void getTicket() {

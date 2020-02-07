@@ -24,8 +24,8 @@ public class ApiDaoTest {
 	public void test() {
 		
 		AdminMovieScheduleVo vo = new AdminMovieScheduleVo();
-		vo.setSchedule_theater_no(115);
-		vo.setSchedule_date("2020-02-07");
+		vo.setSchedule_theater_no(24);
+		vo.setSchedule_date("2020-02-08");
 		
 		List<AdminMovieVo> movies = dao.selectMovies(vo);
 		
