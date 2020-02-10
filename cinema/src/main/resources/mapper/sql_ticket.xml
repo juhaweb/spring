@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.sql_ticket">
+	
+	<insert id="INSERT_TICKET">
+		INSERT INTO `JC_TICKET` SET 
+		`ticket_no`=#{ticket_no}, 
+		`ticket_movie_no`=#{ticket_movie_no}, 
+		`ticket_movie_date`=#{ticket_movie_date}, 
+		`ticket_round_view`=#{ticket_round_view}, 
+		`ticket_theater_no`=#{ticket_theater_no}, 
+		`ticket_screen_no`=#{ticket_screen_no}, 
+		`ticket_seat`=#{ticket_seat}, 
+		`ticket_is_valid`=1, 
+		`ticket_price`=#{ticket_price};
+	</insert>
+	
+	<select id="SELECT_TICKET_NO" resultType="String">
+		SELECT `ticket_no` FROM `JC_TICKET`
+		WHERE 
+			`ticket_movie_no`=#{schedule_movie_no} AND
+			`ticket_movie_date`=#{schedule_date} AND
+			`ticket_round_view`=#{schedule_round_view} AND
+			`ticket_theater_no`=#{schedule_theater_no} AND
+			`ticket_screen_no`=#{schedule_screen_no} AND
+			`ticket_seat`=#{schedule_seat};
+	</select>
+	
+	
+	<insert id="INSERT_PAYMENT">
+		INSERT INTO `JC_PAYMENT` SET
+			`pay_price`=#{pay_price},
+			`pay_discount`=#{pay_discount},
+			`pay_total_price`=#{pay_total_price},
+			`pay_user_id`=#{pay_user_id},
+			`pay_date`=NOW(),
+			`pay_ticket_no`=#{pay_ticket_no},
+			`pay_ticket_amount`=#{pay_ticket_amount};
+	</insert>
+	
+	
+	
+	
+</mapper>

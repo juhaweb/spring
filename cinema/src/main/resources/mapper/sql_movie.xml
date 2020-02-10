@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.sql_movie">
+	
+	<insert id="INSERT_MOVIE">
+		INSERT INTO `JC_MOVIE` SET 
+		`movie_title`=#{movie_title}, 
+		`movie_grade`=#{movie_grade}, 
+		`movie_company`=#{movie_company}, 
+		`movie_release_date`=#{movie_release_date}, 
+		`movie_genre`=#{movie_genre}, 
+		`movie_country`=#{movie_country}, 
+		`movie_running_time`=#{movie_running_time}, 
+		`movie_homepage`=#{movie_homepage}, 
+		`movie_poster`=#{movie_poster}, 
+		`movie_desc`=#{movie_desc}, 
+		`movie_director`=#{movie_director}, 
+		`movie_actor`=#{movie_actor};
+	</insert>
+	
+	<select id="SELECT_MOVIES" resultType="kr.co.jcinema.admin.vo.AdminMovieVo">
+		SELECT * FROM `JC_MOVIE` WHERE `movie_title` LIKE CONCAT('%',#{title},'%');		
+	</select>
+	
+	<select id="SELECT_MOVIES_BY_THEATER" resultType="kr.co.jcinema.admin.vo.AdminMovieVo">
+		SELECT * FROM JC_MOVIE_SCHEDULE AS a
+		JOIN JC_MOVIE AS b ON a.schedule_movie_no = b.movie_no
+		WHERE a.schedule_theater_no=#{schedule_theater_no} AND a.schedule_date=#{schedule_date}
+		GROUP BY a.schedule_movie_no
+		ORDER BY b.movie_ticket_rate DESC, b.movie_release_date DESC;
+	</select>
+	
+	<insert id="INSERT_MOVIE_SCHEDULE">
+		INSERT INTO `JC_MOVIE_SCHEDULE` SET
+		schedule_theater_no=#{schedule_theater_no},
+		schedule_screen_no=#{schedule_screen_no},
+		schedule_movie_no=#{schedule_movie_no},
+		schedule_date=#{schedule_date},
+		schedule_start_time=#{schedule_start_time},
+		schedule_end_time=#{schedule_end_time},
+		schedule_round_view=#{schedule_round_view};
+	</insert>
+	
+	<select id="SELECT_MOVIE_SCHEDULE" resultType="kr.co.jcinema.admin.vo.AdminMovieScheduleVo">
+		SELECT a.*, b.movie_title FROM `JC_MOVIE_SCHEDULE` AS a
+	  	JOIN `JC_MOVIE` AS b ON a.schedule_movie_no = b.movie_no
+	  	WHERE a.schedule_theater_no=#{schedule_theater_no}
+	  	AND a.schedule_screen_no=#{schedule_screen_no}
+	  	AND a.schedule_date=#{schedule_date}
+	  	AND a.schedule_round_view=#{schedule_round_view};	
+	</select>
+	
+	<select id="SELECT_MOVIE_ROUND_VIEW" resultType="kr.co.jcinema.admin.vo.AdminMovieScheduleVo">
+		SELECT * FROM `JC_MOVIE_SCHEDULE`
+		WHERE 
+			`schedule_date`=#{schedule_date} AND 
+			`schedule_theater_no`=#{schedule_theater_no} AND 
+			`schedule_movie_no`=#{schedule_movie_no}
+		ORDER BY `schedule_screen_no` ASC, `schedule_round_view` ASC;
+	</select>
+	
+	<select id="SELECT_MOVIE_SCHEDULE_WITH_THEATER" resultType="kr.co.jcinema.vo.MovieScheduleWithTheaterVo">
+		SELECT 
+			a.*, 
+			b.theater_name, 
+			c.screen_name, 
+			d.movie_title, 
+			d.movie_poster,
+			d.movie_grade, 
+			d.movie_genre
+		FROM `JC_MOVIE_SCHEDULE` AS a
+		JOIN `JC_THEATER` AS b ON a.schedule_theater_no = b.theater_no
+		JOIN `JC_SCREEN`  AS c ON
+			a.schedule_theater_no = c.screen_theater_no AND
+			a.schedule_screen_no = c.screen_no
+		JOIN `JC_MOVIE` AS d ON a.schedule_movie_no= d.movie_no
+		WHERE
+		a.schedule_movie_no=#{ticket_movie_no} AND
+		a.schedule_theater_no=#{seat_theater_no} AND
+		a.schedule_screen_no=#{seat_screen_no} AND
+		a.schedule_date=#{ticket_movie_date} AND
+		a.schedule_round_view=#{ticket_round_view};
+	</select>
+	
+	
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
