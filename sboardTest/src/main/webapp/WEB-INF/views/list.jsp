@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
-		<title>글목록</title> 
+		<title>글목록 test</title> 
 		<link rel="stylesheet" href="/www/css/style.css" />
 	</head>
 	<body>
